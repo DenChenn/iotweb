@@ -84,7 +84,7 @@ def doRead():
                 restrict_input = [0, 0, 0]
                 for i in range(1, 4):
                     restrict_input[i - 1] = min(max(int(tokens[i]), 0), 255)
-                DAN.push("Color_I", restrict_input[0], restrict_input[1], restrict_input[2])
+                DAN.push("Color-I", restrict_input[0], restrict_input[1], restrict_input[2])
             else:
                 print("輸入格式錯誤, 請重新輸入 !")
         except KeyboardInterrupt:
