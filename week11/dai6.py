@@ -48,7 +48,7 @@ tk.protocol("WM_DELETE_WINDOW", kill_me)
 Reg_addr = None
 
 DAN.profile['dm_name'] = 'DEN_Dummy_253'
-DAN.profile['df_list'] = ['Slider', 'Color_I', 'Dmy_d253', 'Dummy_Control']
+DAN.profile['df_list'] = ['Slider', 'Color-I', 'Dmy_d253', 'Dummy_Control']
 
 
 def initIoTtalk():
