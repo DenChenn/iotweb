@@ -123,6 +123,19 @@ def doDummy():  # 因為 Tkinter  必須在 main thread, 所以原先的主程�
                 gotSlider = False  # 其實沒用處, 因為我們不管 user 是否會去改變  Slider
                 DAN.push('Slider', sss)
 
+            # end of if gotSlider
+            if gotInput:
+                if theInput == 'quit' or theInput == "exit":
+                    allDead = True
+                    break;  # sys.exit( );
+                # value2=random.uniform(1, 10)
+                try:
+                    value2 = float(theInput)
+                except:
+                    value2 = 0
+                gotInput = False  # so that you can input again
+                if (allDead): break;
+                DAN.push('Dummy_Control', value2, value2)  # 故意多送一個
             # end of if gotInput
         except KeyboardInterrupt:
             allDead = True
