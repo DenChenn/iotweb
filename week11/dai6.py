@@ -121,7 +121,7 @@ def doDummy():  # 因為 Tkinter  必須在 main thread, 所以原先的主程�
             if gotSlider:  # Slider 有被動到
                 sss = sliderVal  # 取出 slider value
                 gotSlider = False  # 其實沒用處, 因為我們不管 user 是否會去改變  Slider
-                DAN.push('Dummy_Sensor', sss)
+                DAN.push('Slider', sss)
 
             # end of if gotSlider
             if gotInput:
