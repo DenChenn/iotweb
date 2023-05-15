@@ -29,23 +29,16 @@ while True:
         latency = []
         idf_name, odf_name = 'Dummy_Sensor', 'Dummy_Control'
 
-        # wait for iottalk to start
-        time.sleep(15)
+        # wait for iottalk to start and click refresh
+        time.sleep(20)
         for data in tqdm(range(100)):
-            print(data)
             try:
                 start = time.perf_counter()
-                print('start pushing data: '+str(data))
                 DAN.push(idf_name, data)
-                print('end pushing data: '+str(data))
-                time.sleep(2)
                 while True:
                     try:
-                        print('start pulling data')
                         catch = DAN.pull(odf_name)
-                        print('end pulling data')
-                        print('catch: ', catch)
-                        if catch is not None and catch == data:
+                        if catch is not None and catch[-1] is not None and catch[-1] == data:
                             latency.append(time.perf_counter() - start)
                             break
 
