@@ -1,13 +1,14 @@
 import time, random, requests
 import DAN
 
-ServerURL = 'http://IP:9999'      #with non-secure connection
+
+ServerURL = 'https://3.iottalk.tw'
 #ServerURL = 'https://DomainName' #with SSL connection
 Reg_addr = None #if None, Reg_addr = MAC address
 
 DAN.profile['dm_name']='Dummy_Device'
 DAN.profile['df_list']=['Dummy_Sensor', 'Dummy_Control',]
-#DAN.profile['d_name']= 'Assign a Device Name' 
+DAN.profile['d_name']= 'GGGGGG'
 
 DAN.device_registration_with_retry(ServerURL, Reg_addr)
 #DAN.deregister()  #if you want to deregister this device, uncomment this line
@@ -16,7 +17,7 @@ DAN.device_registration_with_retry(ServerURL, Reg_addr)
 while True:
     try:
         IDF_data = random.uniform(1, 10)
-        DAN.push ('Dummy_Sensor', IDF_data) #Push data to an input device feature "Dummy_Sensor"
+        DAN.push('Dummy_Sensor', IDF_data) #Push data to an input device feature "Dummy_Sensor"
 
         #==================================
 
