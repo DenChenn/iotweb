@@ -7,7 +7,7 @@ from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
-ServerURL = 'https://3.iottalk.tw'
+ServerURL = 'https://2.iottalk.tw'
 
 Reg_addr = None
 

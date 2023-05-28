@@ -3,7 +3,7 @@ import time
 
 import DAN
 
-ServerURL = 'https://3.iottalk.tw'
+ServerURL = 'https://2.iottalk.tw'
 
 Reg_addr = None
 
